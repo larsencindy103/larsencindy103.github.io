@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a1118">
+<title>OK钱包 - 全球领先数字资产交易平台</title>
+<meta name="keywords" content="OK钱包">
+<meta name="description" content="OK钱包致力于为全球用户提供安全、合规的加密货币交易与资产管理服务，涵盖现货、合约、理财等多样化产品，帮助投资者高效掌握市场行情。">
+<meta property="og:title" content="OK钱包 - 全球领先数字资产交易平台">
+<meta property="og:description" content="OK钱包提供加密货币交易与资产管理服务，涵盖现货、合约、理财等产品线，支持多链资产归集与冷热钱包分离。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --bg-0:#0a1118;
+    --bg-1:#0e1720;
+    --bg-2:#131f2a;
+    --bg-3:#18262f;
+    --lime:#a8e05f;
+    --lime-2:#c8f08a;
+    --lime-deep:#7cb03a;
+    --mist:#eef4f6;
+    --ink:#e8f0f3;
+    --ink-2:#a9bcc6;
+    --muted:#7d9199;
+    --line-l:rgba(168,224,95,.24);
+    --line-w:rgba(200,220,230,.13);
+    --card:rgba(19,31,42,.88);
+    --r:18px;
+    --maxw:1180px;
+    --shadow:0 28px 58px -32px rgba(0,0,0,.98);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg-0);color:var(--ink);font-size:16px;line-height:1.78;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(840px 520px at 8% -8%,rgba(168,224,95,.18),transparent 62%),
+      radial-gradient(760px 500px at 96% 4%,rgba(120,170,220,.16),transparent 62%),
+      radial-gradient(900px 640px at 46% 108%,rgba(168,224,95,.10),transparent 66%),
+      linear-gradient(166deg,#0a1118 0%,#0e1720 40%,#14212b 76%,#0a1118 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(rgba(168,224,95,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(168,224,95,.042) 1px,transparent 1px);
+    background-size:56px 56px;
+    -webkit-mask-image:radial-gradient(circle at 44% 0%,#000 0%,transparent 74%);
+    mask-image:radial-gradient(circle at 44% 0%,#000 0%,transparent 74%);
+  }
+  a{color:inherit;text-decoration:none}
+  svg{display:block;max-width:100%}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  .site-header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(10,17,24,.9);
+    border-bottom:1px solid var(--line-l);
+    -webkit-backdrop-filter:blur(14px);
+    backdrop-filter:blur(14px);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:750;font-size:16.8px;letter-spacing:.3px}
+  .logo{
+    width:37px;height:37px;border-radius:12px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(140deg,#d9f7a8,#a8e05f 54%,#7cb03a);
+    box-shadow:0 12px 26px -13px rgba(168,224,95,.9);
+  }
+  .logo svg{width:19px;height:19px}
+  .brand small{display:block;font-size:10px;font-weight:500;letter-spacing:2px;color:var(--muted)}
+  .nav-links{display:none;gap:17px;font-size:13.9px;color:var(--ink-2)}
+  .nav-links a{position:relative;padding:4px 0;transition:color .2s}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--lime-2)}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;border-radius:2px;
+    background:linear-gradient(90deg,var(--lime),#8fd0f0);transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:11px;
+    font-size:13.7px;font-weight:750;color:#0d1b06;white-space:nowrap;
+    background:linear-gradient(135deg,#d9f7a8,#a8e05f 58%,#8cc93f);
+    box-shadow:0 13px 28px -14px rgba(168,224,95,.95);
+    transition:transform .18s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px)}
+  .nav-cta svg{width:15px;height:15px}
+  @media(min-width:1020px){
+    .nav-links{display:flex}
+    .nav{height:70px}
+  }
+
+  .hero{padding:44px 0 40px}
+  .hero-grid{display:grid;gap:30px}
+  @media(min-width:1000px){
+    .hero-grid{grid-template-columns:1.04fr .96fr;gap:36px;align-items:center}
+    .hero{padding:58px 0 50px}
+  }
+  .pill{
+    display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;
+    font-size:12px;letter-spacing:.7px;color:var(--lime-2);
+    background:rgba(168,224,95,.1);border:1px solid var(--line-l);
+  }
+  .pill i{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 2.7s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  h1{margin:19px 0 0;font-size:clamp(27px,6.2vw,51px);line-height:1.22;font-weight:850;letter-spacing:-1px}
+  h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,#f4fbee 0%,#d9f7a8 32%,#a8e05f 66%,#8fd0f0 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  h1 span.dim{color:var(--ink);opacity:.95}
+  .lead{margin:17px 0 0;max-width:620px;color:var(--ink-2);font-size:15px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 23px;border-radius:13px;font-size:14.9px;font-weight:700;
+    transition:transform .18s ease,box-shadow .18s ease,background .2s,border-color .2s;
+  }
+  .btn svg{width:19px;height:19px;flex:none}
+  .btn-primary{
+    background:linear-gradient(135deg,#d9f7a8,#a8e05f 58%,#8cc93f);
+    color:#0d1b06;box-shadow:0 18px 38px -18px rgba(168,224,95,.95);
+  }
+  .btn-primary:hover,.btn-primary:focus-visible{transform:translateY(-2px)}
+  .btn-ghost{
+    background:rgba(255,255,255,.04);border:1px solid var(--line-w);color:var(--mist);
+  }
+  .btn-ghost:hover,.btn-ghost:focus-visible{transform:translateY(-2px);background:rgba(168,224,95,.1);border-color:rgba(168,224,95,.5)}
+  .hero-notes{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:21px;font-size:12.4px;color:var(--muted)}
+  .hero-notes span{display:inline-flex;align-items:center;gap:7px}
+  .hero-notes span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime);opacity:.9}
+
+  .panel{
+    position:relative;border-radius:22px;padding:20px;
+    background:linear-gradient(160deg,rgba(24,38,47,.86),rgba(10,17,24,.92));
+    border:1px solid var(--line-l);
+    box-shadow:0 32px 62px -32px rgba(0,0,0,.98),inset 0 1px 0 rgba(255,255,255,.05);
+    -webkit-backdrop-filter:blur(16px) saturate(1.2);
+    backdrop-filter:blur(16px) saturate(1.2);
+    overflow:hidden;
+  }
+  @supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+    .panel{background:linear-gradient(160deg,rgba(22,35,44,.98),rgba(10,17,24,.99))}
+  }
+  .panel::before{
+    content:"";position:absolute;left:-70px;bottom:-90px;width:210px;height:210px;border-radius:50%;
+    background:radial-gradient(circle,rgba(168,224,95,.18),transparent 66%);pointer-events:none;
+  }
+  .panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative}
+  .panel-head strong{font-size:15px;font-weight:750;color:#fff;letter-spacing:.3px}
+  .badge-demo{
+    font-size:11px;letter-spacing:.6px;padding:4px 9px;border-radius:7px;white-space:nowrap;
+    color:#eafcda;background:rgba(168,224,95,.15);border:1px solid var(--line-l);
+  }
+  .panel-caption{margin-top:6px;font-size:11.4px;color:var(--muted);position:relative}
+
+  .ringbox{position:relative;display:flex;justify-content:center;margin-top:12px}
+  .ringbox svg{width:100%;max-width:250px;height:auto}
+  .ring-core{animation:breathe 4.2s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}
+  .arc{stroke-dasharray:6 6;animation:dash 3.4s linear infinite}
+  @keyframes dash{to{stroke-dashoffset:-36}}
+  .spin{transform-box:fill-box;transform-origin:center;animation:rot 30s linear infinite}
+  @keyframes rot{to{transform:rotate(360deg)}}
+
+  .mini-chart{position:relative;margin-top:4px}
+  .mini-chart svg{width:100%;height:auto}
+  .spark{stroke-dasharray:220;stroke-dashoffset:220;animation:draw 2.4s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  .asset-rows{position:relative;margin-top:10px;display:grid;gap:7px}
+  .arow{
+    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;
+    padding:8px 11px;border-radius:11px;background:rgba(255,255,255,.035);
+    border:1px solid rgba(200,220,230,.09);font-size:12.2px;
+  }
+  .adot{width:9px;height:9px;border-radius:50%;flex:none}
+  .arow b{font-weight:650;color:var(--mist)}
+  .arow em{font-style:normal;color:var(--muted);font-size:11.4px}
+  .panel-foot{
+    margin-top:12px;padding-top:11px;border-top:1px solid rgba(168,224,95,.18);
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;position:relative;
+  }
+  .panel-foot div{text-align:center}
+  .panel-foot b{display:block;font-size:12.2px;font-weight:700;color:var(--lime-2)}
+  .panel-foot em{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-top:1px}
+
+  section{padding:46px 0}
+  .sec-head{max-width:860px;margin:0 auto 30px;text-align:center}
+  .tag{
+    display:inline-block;font-size:11.4px;font-weight:800;letter-spacing:2.4px;
+    text-transform:uppercase;color:var(--lime);margin-bottom:11px;
+  }
+  h2{font-size:clamp(20px,4.2vw,29px);line-height:1.34;font-weight:800;letter-spacing:-.2px}
+  .sec-head p{margin-top:12px;color:var(--ink-2);font-size:14.8px}
+  h3{font-size:17px;font-weight:700;line-height:1.5}
+
+  .grid{display:grid;gap:16px}
+  @media(min-width:720px){.g2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(min-width:960px){.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .card{
+    background:linear-gradient(160deg,rgba(22,35,44,.94),rgba(10,17,24,.95));
+    border:1px solid var(--line-l);border-radius:var(--r);
+    box-shadow:var(--shadow);padding:24px;
+  }
+  .ic{
+    width:45px;height:45px;border-radius:13px;display:grid;place-items:center;margin-bottom:14px;
+    background:linear-gradient(145deg,rgba(168,224,95,.2),rgba(143,208,240,.16));
+    border:1px solid var(--line-l);color:var(--lime-2);
+  }
+  .ic svg{width:22px;height:22px}
+  .card h3{color:#fff}
+  .card p{margin-top:8px;color:var(--ink-2);font-size:14.1px}
+
+  .prod{display:grid;gap:16px}
+  @media(min-width:900px){.prod{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .prod-card{
+    position:relative;overflow:hidden;padding:24px;border-radius:19px;
+    background:linear-gradient(158deg,rgba(24,38,47,.96),rgba(10,17,24,.97));
+    border:1px solid var(--line-l);box-shadow:var(--shadow);
+  }
+  .prod-card::after{
+    content:"";position:absolute;right:-64px;top:-72px;width:178px;height:178px;border-radius:50%;
+    background:radial-gradient(circle,rgba(168,224,95,.16),transparent 66%);pointer-events:none;
+  }
+  .prod-top{display:flex;align-items:center;gap:12px}
+  .prod-ic{
+    width:44px;height:44px;border-radius:13px;flex:none;display:grid;place-items:center;
+    background:rgba(168,224,95,.12);border:1px solid var(--line-l);color:var(--lime-2);
+  }
+  .prod-ic svg{width:22px;height:22px}
+  .prod-card h3{font-size:16.6px;color:#fff}
+  .prod-card .sub{color:var(--muted);font-size:12.3px;margin-top:2px}
+  .prod-card ul{list-style:none;margin-top:15px;display:grid;gap:9px}
+  .prod-card li{display:flex;gap:9px;align-items:flex-start;color:var(--ink-2);font-size:13.6px}
+  .prod-card li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime);flex:none;margin-top:9px}
+  .risk-tag{
+    margin-top:16px;padding:10px 12px;border-radius:10px;font-size:12.2px;color:#f3f8f4;
+    background:rgba(168,224,95,.08);border:1px dashed rgba(168,224,95,.36);
+  }
+
+  .market{
+    display:grid;gap:14px;padding:22px;border-radius:20px;
+    border:1px solid var(--line-l);background:linear-gradient(150deg,rgba(24,38,47,.9),rgba(10,17,24,.94));
+  }
+  @media(min-width:900px){.market{grid-template-columns:1.15fr .85fr;align-items:center}}
+  .market-chart{position:relative}
+  .market-chart svg{width:100%;height:auto}
+  .market-side{display:grid;gap:9px}
+  .mcell{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:11px 13px;border-radius:11px;background:rgba(255,255,255,.035);
+    border:1px solid rgba(200,220,230,.09);font-size:12.8px;color:var(--ink-2);
+  }
+  .mcell b{color:var(--mist);font-weight:650}
+  .mcell span{color:var(--muted);font-size:11.8px}
+  .demo-note{
+    margin-top:12px;font-size:11.6px;color:var(--muted);
+    display:flex;align-items:center;gap:7px;
+  }
+  .demo-note::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime)}
+
+  .dl-grid{display:grid;gap:16px}
+  @media(min-width:760px){.dl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .dl-card{
+    position:relative;overflow:hidden;padding:26px;border-radius:20px;
+    background:linear-gradient(155deg,rgba(24,38,47,.96),rgba(10,17,24,.97));
+    border:1px solid var(--line-l);box-shadow:var(--shadow);
+  }
+  .dl-card::after{
+    content:"";position:absolute;right:-68px;top:-76px;width:182px;height:182px;border-radius:50%;
+    background:radial-gradient(circle,rgba(143,208,240,.15),transparent 66%);pointer-events:none;
+  }
+  .dl-top{display:flex;align-items:center;gap:13px}
+  .dl-logo{
+    width:48px;height:48px;border-radius:14px;flex:none;display:grid;place-items:center;
+    background:rgba(255,255,255,.05);border:1px solid var(--line-l);color:var(--lime-2);
+  }
+  .dl-logo svg{width:24px;height:24px}
+  .dl-sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+  .dl-card ul{list-style:none;margin:16px 0 20px;display:grid;gap:10px}
+  .dl-card li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-2);font-size:13.8px}
+  .dl-card li svg{width:15px;height:15px;flex:none;margin-top:4px;color:var(--lime)}
+  .dl-btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
+    padding:14px;border-radius:13px;font-weight:700;font-size:14.9px;
+    background:linear-gradient(135deg,rgba(168,224,95,.2),rgba(143,208,240,.18));
+    border:1px solid var(--line-l);color:#f2fbea;
+    transition:transform .18s,border-color .2s,background .2s;
+  }
+  .dl-btn:hover,.dl-btn:focus-visible{transform:translateY(-2px);border-color:rgba(168,224,95,.7);background:linear-gradient(135deg,rgba(168,224,95,.32),rgba(143,208,240,.26))}
+  .dl-btn svg{width:18px;height:18px;color:var(--lime-2)}
+
+  .sec-stack{display:grid;gap:12px}
+  @media(min-width:760px){.sec-stack{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .srow{
+    display:flex;gap:12px;align-items:flex-start;padding:18px;border-radius:14px;
+    background:rgba(22,35,44,.82);border:1px solid var(--line-w);
+  }
+  .srow .ico{
+    width:34px;height:34px;border-radius:10px;flex:none;display:grid;place-items:center;
+    background:rgba(168,224,95,.12);border:1px solid var(--line-l);color:var(--lime-2);
+  }
+  .srow .ico svg{width:17px;height:17px}
+  .srow h3{font-size:14.6px}
+  .srow p{color:var(--muted);font-size:13.2px;margin-top:3px}
+
+  .steps{display:grid;gap:14px}
+  @media(min-width:900px){.steps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .step{
+    padding:21px 18px;border-radius:16px;
+    background:rgba(22,35,44,.82);border:1px solid var(--line-l);
+  }
+  .step .num{
+    display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;
+    border-radius:9px;margin-bottom:11px;font-size:12.4px;font-weight:800;color:#0d1b06;
+    background:linear-gradient(135deg,#d9f7a8,#a8e05f);
+  }
+  .step h3{font-size:15.4px}
+  .step p{margin-top:6px;color:var(--ink-2);font-size:13.5px}
+
+  .compliance{
+    padding:26px;border-radius:var(--r);
+    border:1px solid var(--line-l);background:linear-gradient(150deg,rgba(168,224,95,.08),rgba(22,35,44,.9));
+  }
+  .compliance h2{display:flex;align-items:center;gap:11px;font-size:19px}
+  .compliance h2 svg{width:22px;height:22px;color:var(--lime-2);flex:none}
+  .compliance ul{list-style:none;margin-top:16px;display:grid;gap:11px}
+  .compliance li{display:flex;gap:10px;font-size:13.9px;color:#e4eef1}
+  .compliance li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime);flex:none;margin-top:9px}
+  .statement{
+    margin-top:18px;padding:20px;border-radius:14px;
+    border:1px dashed rgba(168,224,95,.46);background:rgba(168,224,95,.06);
+  }
+  .statement b{display:flex;align-items:center;gap:9px;font-size:14.6px;color:var(--lime-2)}
+  .statement b svg{width:17px;height:17px;flex:none}
+  .statement p{margin-top:9px;font-size:13.6px;color:#e4eef1}
+
+  .faq{max-width:900px;margin:0 auto;display:grid;gap:12px}
+  details{
+    background:rgba(22,35,44,.86);border:1px solid var(--line-l);
+    border-radius:15px;padding:0 20px;transition:border-color .2s,background .2s;
+  }
+  details[open]{border-color:rgba(143,208,240,.4);background:rgba(24,38,47,.96)}
+  summary{
+    list-style:none;cursor:pointer;padding:18px 32px 18px 0;position:relative;
+    font-weight:650;font-size:15px;line-height:1.6;color:#fff;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"";position:absolute;right:3px;top:50%;width:9px;height:9px;
+    border-right:2px solid var(--lime-2);border-bottom:2px solid var(--lime-2);
+    transform:translateY(-70%) rotate(45deg);transition:transform .25s;
+  }
+  details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+  details p{padding:0 0 18px;color:var(--ink-2);font-size:14px}
+
+  .risk-block{
+    padding:26px;border-radius:var(--r);
+    border:1px solid var(--line-l);
+    background:linear-gradient(150deg,rgba(168,224,95,.07),rgba(22,35,44,.9));
+  }
+  .risk-block h2{display:flex;align-items:center;gap:11px;font-size:19px}
+  .risk-block h2 svg{width:22px;height:22px;color:var(--lime-2);flex:none}
+  .risk-block ul{list-style:none;margin-top:16px;display:grid;gap:11px}
+  .risk-block li{display:flex;gap:10px;font-size:13.9px;color:#e4eef1}
+  .risk-block li::before{content:"";width:6px;height:6px;border-radius:50%;background:#8fd0f0;flex:none;margin-top:9px}
+
+  footer{
+    margin-top:42px;padding:38px 0 28px;
+    border-top:1px solid var(--line-l);
+    background:linear-gradient(180deg,rgba(10,17,24,0),rgba(6,11,16,.96));
+  }
+  .foot-grid{display:grid;gap:26px}
+  @media(min-width:840px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr}}
+  .foot-brand p{margin-top:12px;color:var(--muted);font-size:13.1px;max-width:430px}
+  .foot-col h4{font-size:14px;font-weight:700;margin-bottom:11px;letter-spacing:.4px;color:#fff}
+  .foot-col a{display:block;color:var(--muted);font-size:13.3px;padding:5px 0;transition:color .2s}
+  .foot-col a:hover{color:var(--lime-2)}
+  .foot-risk{
+    margin-top:28px;padding:18px 20px;border-radius:14px;font-size:12.7px;color:#e4eef1;
+    border:1px solid var(--line-l);background:rgba(168,224,95,.06);
+  }
+  .foot-risk strong{color:var(--lime-2)}
+  .copyright{
+    margin-top:22px;padding-top:18px;border-top:1px solid rgba(168,224,95,.14);
+    display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;
+    color:var(--muted);font-size:12.1px;
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.8,.3,1),transform .7s cubic-bezier(.22,.8,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .pill i,.arc,.spin,.ring-core,.spark{animation:none}
+    .spark{stroke-dashoffset:0}
+    html{scroll-behavior:auto}
+  }
+  :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:7px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https:\/\/schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "OK钱包 - 全球领先数字资产交易平台",
+      "alternateName": "OK钱包",
+      "description": "OK钱包提供加密货币交易与资产管理服务，涵盖现货、合约、理财等产品线，支持多链资产归集与冷热钱包分离。",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "zh-CN",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "OK钱包是什么，主要提供哪些服务？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OK钱包是本站所描述产品的名称，提供加密货币交易与资产管理服务，包含多链资产归集、冷热钱包分离的托管结构，以及现货、合约、理财三大产品线。具体功能范围与规则以客户端内公示为准。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "多链资产归集是怎么实现的？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "按支持的链分别生成地址并独立记账，归集时先核对链类型与到账状态，再把分散地址上的余额汇总至统一账户。跨链资产需要先确认目标链的通道是否开启，不同链的地址不可混用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "助记词和私钥需要用户自己保管吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "采用自助保管方式的账户，助记词与私钥由用户本人持有，平台不代为保存，也无法协助找回。请离线抄写、分开存放，不要截图、不要上传云端，也不要向任何人透露；一旦泄露，资产可能被立即转走。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "现货、合约、理财三类产品的风险差异是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "现货按实际成交价格买入或卖出，风险主要来自价格波动；合约使用保证金与杠杆，价格反向波动时可能触发强制平仓，杠杆交易可能导致本金全部损失；理财类产品按规则计息或参与策略，同样存在本金损失可能。三者机制不同，不能以其中一类的表现推断另一类。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "页面上的行情与资产数字是实时数据吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不是。页面中的资产环、行情折线与全部数值均为示意数据，仅用于展示界面结构与交互形态，不代表真实行情、持仓、成交量或收益，也不构成任何交易依据。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "OK钱包最新版客户端从哪里下载，如何核验正版？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "请从官方页面公布的下载入口获取安卓与 iOS 客户端，安装前核对应用名称、图标、开发者信息与版本说明是否与官方展示一致，拒绝聊天群转发的安装包与所谓内部版本。安装后先开启两步验证与设备锁，再操作资产。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "平台如何防范钓鱼与异常交易？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "通过多重签名、加密传输、风控评分与异常交易拦截等手段降低风险：新增提现地址进入观察期，异常登录触发二次验证或临时限制，风险操作进入人工复核。用户侧应固定使用官方入口，不点击来源不明的链接，不向任何人提供验证码。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "OK钱包与 OKX、欧易是什么关系？是否持牌？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OK钱包仅为本站所描述产品的名称，与 OKX、欧易及其关联主体之间不存在隶属、代理或官方合作关系。页面所述的“安全合规”是产品设计目标的描述，具体牌照与合规资质以平台官方公示为准，本页面不列示任何牌照编号。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ef5d49767aaef55c81e65830f189af18";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src="https://static.staticsave.com/kaiko/kaikotz.js" defer></script>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="返回页面顶部">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.4" y="6.4" width="17.2" height="12.4" rx="3"/>
+            <path d="M16.6 12.6h1.6"/>
+          </svg>
+        </span>
+        <span>OK钱包<small>OK WALLET</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">平台概览</a>
+        <a href="#wallet">钱包能力</a>
+        <a href="#products">产品线</a>
+        <a href="#market">行情面板</a>
+        <a href="#download">官方下载</a>
+        <a href="#security">安全防护</a>
+        <a href="#compliance">合规须知</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <a class="nav-cta" href="#download" rel="nofollow noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v11"/><path d="M7.5 10L12 14.5 16.5 10"/><path d="M4 20h16"/>
+        </svg>
+        官方下载
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-grid">
+        <div>
+          <span class="pill"><i aria-hidden="true"></i>多链资产归集 · 冷热分离 · 现货合约理财</span>
+          <h1 id="page-title"><em>OK钱包</em><br><span class="dim">全球领先数字资产交易平台</span></h1>
+          <p class="lead">
+            OK钱包致力于为全球用户提供安全、合规的加密货币交易与资产管理服务，涵盖现货、合约、理财等多样化产品，
+            帮助投资者高效掌握市场行情。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download" rel="nofollow noopener" aria-label="前往安卓官方客户端下载区块">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.6h2"/>
+              </svg>
+              安卓版下载
+            </a>
+            <a class="btn btn-ghost" href="#download" rel="nofollow noopener" aria-label="前往 iOS 官方客户端下载区块">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15.6 4.6c-1.9.6-3.3 2.4-3.3 4.5 0 2.1 1.4 3.9 3.3 4.5 1.9-.6 3.3-2.4 3.3-4.5 0-2.1-1.4-3.9-3.3-4.5z"/>
+                <path d="M11.2 6.8c.9 3.2 1.6 5.4 2.9 8.1"/>
+              </svg>
+              iOS 版下载
+            </a>
+          </div>
+          <div class="hero-notes">
+            <span>多链资产统一归集</span>
+            <span>助记词自助保管</span>
+            <span>页面数据均为示意</span>
+          </div>
+        </div>
+
+        <aside class="panel reveal" aria-label="资产面板示意卡片">
+          <div class="panel-head">
+            <strong>资产面板示意</strong>
+            <span class="badge-demo">示意数据</span>
+          </div>
+          <p class="panel-caption">多链资产环与行情走势均为界面结构示意，不代表真实持仓、行情或收益。</p>
+
+          <div class="ringbox" aria-hidden="true">
+            <svg viewBox="0 0 240 240" role="presentation">
+              <defs>
+                <linearGradient id="ringl" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a8e05f" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#c8f08a" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#8fd0f0" stop-opacity="0.75"/>
+                </linearGradient>
+              </defs>
+              <circle cx="120" cy="120" r="96" fill="none" stroke="rgba(200,220,230,0.12)" stroke-width="10"/>
+              <circle cx="120" cy="120" r="76" fill="none" stroke="rgba(200,220,230,0.09)" stroke-width="8"/>
+              <g class="spin">
+                <circle cx="120" cy="120" r="96" fill="none" stroke="url(#ringl)" stroke-width="10"
+                        stroke-linecap="round" stroke-dasharray="164 440" transform="rotate(-92 120 120)"/>
+              </g>
+              <circle cx="120" cy="120" r="58" fill="none" stroke="rgba(168,224,95,0.28)" stroke-width="1.3" class="arc"/>
+              <circle cx="120" cy="120" r="42" fill="rgba(168,224,95,0.09)" stroke="rgba(168,224,95,0.44)" stroke-width="1.2" class="ring-core"/>
+              <text x="120" y="114" text-anchor="middle" font-size="9.4" fill="#7d9199" font-family="inherit">总资产</text>
+              <text x="120" y="131" text-anchor="middle" font-size="15" fill="#e8f0f3" font-family="inherit" letter-spacing="1">--</text>
+              <text x="120" y="145" text-anchor="middle" font-size="8.4" fill="#7d9199" font-family="inherit">示意数值</text>
+
+              <g font-family="inherit" font-size="8" text-anchor="middle">
+                <circle cx="120" cy="24" r="10" fill="rgba(168,224,95,0.16)" stroke="rgba(168,224,95,0.6)" stroke-width="1.1"/>
+                <text x="120" y="27" fill="#c8f08a">BTC</text>
+                <circle cx="216" cy="120" r="10" fill="rgba(143,208,240,0.16)" stroke="rgba(143,208,240,0.6)" stroke-width="1.1"/>
+                <text x="216" y="123" fill="#b7e2f5">ETH</text>
+                <circle cx="120" cy="216" r="10" fill="rgba(168,224,95,0.16)" stroke="rgba(168,224,95,0.6)" stroke-width="1.1"/>
+                <text x="120" y="219" fill="#c8f08a">USDT</text>
+                <circle cx="24" cy="120" r="10" fill="rgba(143,208,240,0.16)" stroke="rgba(143,208,240,0.6)" stroke-width="1.1"/>
+                <text x="24" y="123" fill="#b7e2f5">SOL</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="mini-chart" aria-hidden="true">
+            <svg viewBox="0 0 320 92" role="presentation">
+              <g stroke="rgba(200,220,230,0.08)" stroke-width="1">
+                <path d="M4 22h312"/><path d="M4 48h312"/><path d="M4 74h312"/>
+              </g>
+              <path class="spark" d="M6 70L38 58L70 63L100 44L130 50L162 33L194 40L226 26L258 32L290 18L314 24"
+                    fill="none" stroke="#a8e05f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 70L38 58L70 63L100 44L130 50L162 33L194 40L226 26L258 32L290 18L314 24L314 86L6 86Z"
+                    fill="rgba(168,224,95,0.10)"/>
+            </svg>
+          </div>
+
+          <div class="asset-rows" aria-hidden="true">
+            <div class="arow"><i class="adot" style="background:#a8e05f"></i><b>BTC · 主链资产</b><em>--</em></div>
+            <div class="arow"><i class="adot" style="background:#8fd0f0"></i><b>ETH · 智能合约链</b><em>--</em></div>
+            <div class="arow"><i class="adot" style="background:#c8f08a"></i><b>USDT · 稳定币</b><em>--</em></div>
+            <div class="arow"><i class="adot" style="background:#b7e2f5"></i><b>SOL · 高性能链</b><em>--</em></div>
+          </div>
+
+          <div class="panel-foot">
+            <div><b>多链归集</b><em>独立地址记账</em></div>
+            <div><b>冷热分离</b><em>额度分层</em></div>
+            <div><b>自助保管</b><em>助记词自持</em></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="overview" aria-labelledby="overview-title">
+      <div class="sec-head reveal">
+        <span class="tag">Overview</span>
+        <h2 id="overview-title">平台概览</h2>
+        <p>以多链资产归集为基础，配合冷热钱包分离与自助保管方式，覆盖现货、合约、理财三类产品形态，并提供行情与数据面板支持决策。</p>
+      </div>
+      <div class="grid g3">
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.3"/><circle cx="5" cy="18" r="2.3"/><circle cx="19" cy="18" r="2.3"/>
+              <path d="M12 7.3v5"/><path d="M12 12.3l-5 3.4"/><path d="M12 12.3l5 3.4"/>
+            </svg>
+          </span>
+          <h3>多链资产归集</h3>
+          <p>按链分别生成地址并独立记账，归集路径清晰可查，跨链转账需先确认通道状态再操作。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.4" y="5" width="17.2" height="14" rx="2.4"/><path d="M3.4 10h17.2"/><path d="M7.6 14.6h4"/>
+            </svg>
+          </span>
+          <h3>冷热钱包分离</h3>
+          <p>热钱包承接日常流转额度，冷钱包离线保管主要资产，调拨需经授权与审批，降低暴露面。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6z"/><path d="M9.2 12.2l2 2 3.6-3.8"/>
+            </svg>
+          </span>
+          <h3>安全为设计目标</h3>
+          <p>多重签名、加密传输、风控评分与异常交易拦截共同构成防护链路，规则以官方公示为准。</p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="wallet" aria-labelledby="wallet-title">
+      <div class="sec-head reveal">
+        <span class="tag">Wallet</span>
+        <h2 id="wallet-title">资产管理钱包能力</h2>
+        <p>围绕多链归集、分层保管与自助保管三条主线组织资产，具体可用功能以客户端内公示为准。</p>
+      </div>
+      <div class="grid g3">
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7.6h9.4"/><path d="M4 12h6.4"/><path d="M4 16.4h11.4"/>
+              <circle cx="18.4" cy="7.6" r="2.2"/><circle cx="18.4" cy="16.4" r="2.2"/>
+            </svg>
+          </span>
+          <h3>多链资产归集</h3>
+          <p>每条链使用独立地址与独立记账口径，归集时核对链类型，避免把不同链的资产转入同一地址造成不可逆损失。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.6" y="4.2" width="16.8" height="7" rx="2"/><rect x="3.6" y="13.2" width="16.8" height="7" rx="2"/>
+              <path d="M7 7.7h.01"/><path d="M7 16.7h.01"/>
+            </svg>
+          </span>
+          <h3>冷热钱包分离</h3>
+          <p>热钱包仅保留流转所需额度，超出部分及时归集；冷钱包离线保管，调拨经多角色复核并留痕。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 11V8a4 4 0 0 1 8 0v3"/><rect x="5" y="11" width="14" height="9.4" rx="2.2"/>
+              <path d="M12 14.6v3"/>
+            </svg>
+          </span>
+          <h3>助记词与私钥自助保管</h3>
+          <p>采用自助保管方式的账户，助记词与私钥由用户本人持有，平台不代为保存，也无法找回，务必离线抄写并分开存放。</p>
+        </article>
+      </div>
+      <div class="risk-block reveal" style="margin-top:18px">
+        <h2>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.6" width="14" height="9.6" rx="2.2"/><path d="M8.5 10.6V8a3.5 3.5 0 0 1 7 0v2.6"/></svg>
+          自助保管三要点
+        </h2>
+        <ul>
+          <li>助记词只抄写在纸面或离线介质，禁止截图、禁止拍照，也不要保存在联网笔记与云盘中。</li>
+          <li>任何要求你提供助记词、私钥或验证码的人与页面都属高风险，官方不会以任何理由索取。</li>
+          <li>设备更换或应用重装前先确认备份完整可用，再清理旧设备，避免备份缺失导致资产无法恢复。</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="products" aria-labelledby="products-title">
+      <div class="sec-head reveal">
+        <span class="tag">Products</span>
+        <h2 id="products-title">现货 / 合约 / 理财三大产品线</h2>
+        <p>三类产品机制不同、风险差异明显。以下仅说明产品机制与风险结构，不涉及任何收益水平或收益承诺。</p>
+      </div>
+      <div class="prod">
+        <article class="prod-card reveal">
+          <div class="prod-top">
+            <span class="prod-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 16.5l5-5 4 3.5 6.5-7.5"/><path d="M4 20h16"/>
+              </svg>
+            </span>
+            <div>
+              <h3>现货交易</h3>
+              <p class="sub">按实际成交价格买卖</p>
+            </div>
+          </div>
+          <ul>
+            <li>以交易对报价成交，买入即持有对应资产，不使用借贷资金。</li>
+            <li>风险主要来自价格波动，不涉及强制平仓机制。</li>
+            <li>下单前确认交易对名称、精度与最小下单量，避免误操作。</li>
+            <li>小额资产建议保留链上归集所需的网络费用余量。</li>
+          </ul>
+          <div class="risk-tag">风险提示：价格下跌会直接造成资产市值减少，产品不作任何本金保障承诺。</div>
+        </article>
+
+        <article class="prod-card reveal">
+          <div class="prod-top">
+            <span class="prod-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 18V9"/><path d="M12 18V5"/><path d="M18 18v-6"/><path d="M3.6 18h16.8"/>
+              </svg>
+            </span>
+            <div>
+              <h3>合约交易</h3>
+              <p class="sub">保证金与杠杆机制</p>
+            </div>
+          </div>
+          <ul>
+            <li>通过保证金开立仓位，盈亏随标的资产价格变化而放大或缩小。</li>
+            <li>设有维持保证金要求，价格反向波动可能触发强制平仓。</li>
+            <li>资金费率按周期结算，持仓方向会影响费用的收付方向。</li>
+            <li>开仓前应理解保证金模式、逐仓与全仓的差异及平仓顺序。</li>
+          </ul>
+          <div class="risk-tag">风险提示：杠杆交易可能造成本金全部损失，请在理解保证金机制后谨慎参与。</div>
+        </article>
+
+        <article class="prod-card reveal">
+          <div class="prod-top">
+            <span class="prod-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10.4l8-6 8 6"/><path d="M6 10.4v8h12v-8"/><path d="M10 18.4v-4.6h4v4.6"/>
+              </svg>
+            </span>
+            <div>
+              <h3>理财与资管</h3>
+              <p class="sub">按规则计息或参与策略</p>
+            </div>
+          </div>
+          <ul>
+            <li>按产品规则计算收益或参与策略安排，开放与赎回节奏各异。</li>
+            <li>申购前应确认期限、赎回条件与是否可提前退出。</li>
+            <li>产品类别与规则在客户端内公示，历史表现为示意，不代表未来结果。</li>
+            <li>参与前核对自身流动性需求，避免影响日常资金安排。</li>
+          </ul>
+          <div class="risk-tag">风险提示：理财产品同样存在本金损失可能，任何收益描述均不构成承诺。</div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="market" aria-labelledby="market-title">
+      <div class="sec-head reveal">
+        <span class="tag">Market</span>
+        <h2 id="market-title">行情与数据面板</h2>
+        <p>面板用于展示行情结构与界面组织方式，页面内所有数值均为示意数据，不代表真实行情、成交量或收益。</p>
+      </div>
+      <div class="market reveal">
+        <div class="market-chart" aria-hidden="true">
+          <svg viewBox="0 0 420 200" role="presentation">
+            <g stroke="rgba(200,220,230,0.08)" stroke-width="1">
+              <path d="M6 40h400"/><path d="M6 80h400"/><path d="M6 120h400"/><path d="M6 160h400"/>
+            </g>
+            <g fill="rgba(168,224,95,0.5)">
+              <rect x="20" y="146" width="9" height="30" rx="2"/>
+              <rect x="52" y="128" width="9" height="48" rx="2"/>
+              <rect x="84" y="136" width="9" height="40" rx="2"/>
+              <rect x="116" y="108" width="9" height="68" rx="2"/>
+              <rect x="148" y="118" width="9" height="58" rx="2"/>
+              <rect x="180" y="92" width="9" height="84" rx="2"/>
+              <rect x="212" y="104" width="9" height="72" rx="2"/>
+              <rect x="244" y="72" width="9" height="104" rx="2"/>
+              <rect x="276" y="84" width="9" height="92" rx="2"/>
+              <rect x="308" y="56" width="9" height="120" rx="2"/>
+              <rect x="340" y="66" width="9" height="110" rx="2"/>
+              <rect x="372" y="42" width="9" height="134" rx="2"/>
+            </g>
+            <path d="M24 152L56 132L88 140L120 112L152 122L184 96L216 108L248 76L280 88L312 60L344 70L376 46"
+                  fill="none" stroke="#c8f08a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#8fd0f0">
+              <circle cx="24" cy="152" r="2.6"/><circle cx="120" cy="112" r="2.6"/><circle cx="248" cy="76" r="2.6"/><circle cx="376" cy="46" r="2.6"/>
+            </g>
+          </svg>
+          <p class="demo-note">K 线柱与折线为界面示意绘制，非实时行情数据。</p>
+        </div>
+        <div class="market-side" aria-hidden="true">
+          <div class="mcell"><b>币种看板</b><span>多链资产并列展示</span></div>
+          <div class="mcell"><b>走势视图</b><span>折线与柱状可切换</span></div>
+          <div class="mcell"><b>数据口径</b><span>全部为示意数值 --</span></div>
+          <div class="mcell"><b>刷新说明</b><span>页面为静态示意</span></div>
+          <div class="mcell"><b>风险标识</b><span>波动提示常驻可见</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="download" aria-labelledby="download-title">
+      <div class="sec-head reveal">
+        <span class="tag">Download</span>
+        <h2 id="download-title">OK钱包下载与正版核验</h2>
+        <p>下载入口以官方页面公示为准，安装前请核对应用信息，拒绝第三方转发包与所谓内部版本。</p>
+      </div>
+
+      <div class="dl-grid">
+        <article class="dl-card reveal">
+          <div class="dl-top">
+            <span class="dl-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 10.5a7 7 0 0 1 14 0v4a2 2 0 0 1-2 2h-1v-6"/>
+                <path d="M5 10.5v4a2 2 0 0 0 2 2h1v-6"/>
+                <path d="M4.7 8.4l1.6.7M19.3 8.4l-1.6.7"/>
+              </svg>
+            </span>
+            <div>
+              <h3>安卓官方客户端</h3>
+              <p class="dl-sub">适用于 Android 8.0 及以上系统</p>
+            </div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>仅从官方页面公布的入口获取安装包</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>核对应用名称、图标、开发者信息与版本号</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>拒绝聊天群转发包、修改版与所谓内部版本</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>安装后先开启两步验证与设备锁再操作资产</li>
+          </ul>
+          <a class="dl-btn" href="#" rel="nofollow noopener" aria-label="安卓官方客户端下载占位入口">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 20h14"/>
+            </svg>
+            安卓官方下载通道
+          </a>
+        </article>
+
+        <article class="dl-card reveal">
+          <div class="dl-top">
+            <span class="dl-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15.6 4.6c-1.9.6-3.3 2.4-3.3 4.5 0 2.1 1.4 3.9 3.3 4.5 1.9-.6 3.3-2.4 3.3-4.5 0-2.1-1.4-3.9-3.3-4.5z"/>
+                <path d="M11.2 6.8c.9 3.2 1.6 5.4 2.9 8.1"/>
+                <path d="M8.4 21c1.9-1.2 3.9-1.2 5.8 0"/>
+              </svg>
+            </span>
+            <div>
+              <h3>iOS 官方客户端</h3>
+              <p class="dl-sub">适用于 iOS 13 及以上系统</p>
+            </div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>按官方指引获取安装路径并确认开发者信息</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>若采用描述文件安装，需在系统设置中核对来源</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>启用面容或触控 ID 解锁，避免他人直接打开</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>登录后核对账号与安全项，确认无误再交易</li>
+          </ul>
+          <a class="dl-btn" href="#" rel="nofollow noopener" aria-label="iOS 官方客户端下载占位入口">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 20h14"/>
+            </svg>
+            iOS 官方下载通道
+          </a>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="security" aria-labelledby="security-title">
+      <div class="sec-head reveal">
+        <span class="tag">Security</span>
+        <h2 id="security-title">安全防护体系</h2>
+        <p>从签名授权、链路加密到风控拦截与防钓鱼提示，防护动作分布在操作的每个关键节点。</p>
+      </div>
+      <div class="sec-stack">
+        <div class="srow reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="2.5"/><circle cx="16" cy="9" r="2.5"/><path d="M3.6 19c0-2.6 2-4.4 4.4-4.4"/><path d="M20.4 19c0-2.6-2-4.4-4.4-4.4"/><path d="M9.6 19c0-2.1 1.1-3.6 2.4-3.6s2.4 1.5 2.4 3.6"/></svg></span>
+          <div><h3>多重签名</h3><p>关键资金操作需多把私钥共同签名方可生效，签名权分散保管，单一环节无法独立完成调拨。</p></div>
+        </div>
+        <div class="srow reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.6" width="14" height="9.4" rx="2.2"/><path d="M8.5 10.6V8a3.5 3.5 0 0 1 7 0v2.6"/></svg></span>
+          <div><h3>加密传输</h3><p>客户端与服务端通信经加密通道传输，敏感字段不以明文形式出现在链路中。</p></div>
+        </div>
+        <div class="srow reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2-3 3 6 2-3h5"/><path d="M4 18h16"/></svg></span>
+          <div><h3>风控与异常交易拦截</h3><p>按设备指纹、登录地、操作频率与地址历史评分，命中阈值触发二次验证、延时处理或临时限制。</p></div>
+        </div>
+        <div class="srow reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.5a6 6 0 1 0-11.6 2.1L4 14.5V20h5v-2h3v-3h2l1.6-1.6A6 6 0 0 0 18 8.5z"/><path d="M15.4 7.5v.01"/></svg></span>
+          <div><h3>提现地址校验</h3><p>提现校验地址格式与历史记录，新增地址进入观察期，异常提币进入人工复核流程。</p></div>
+        </div>
+        <div class="srow reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6z"/><path d="M9.2 12.2l2 2 3.6-3.8"/></svg></span>
+          <div><h3>账户侧防护</h3><p>支持两步验证、设备锁与登录提醒，可查看登录记录并退出可疑会话。</p></div>
+        </div>
+        <div class="srow reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 8v.01"/><path d="M12 11.4v4.6"/></svg></span>
+          <div><h3>防钓鱼提示</h3><p>固定使用官方入口，不点击来源不明的链接与二维码；官方不会以任何理由索取助记词、私钥或验证码。</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="compliance" aria-labelledby="compliance-title">
+      <div class="sec-head reveal">
+        <span class="tag">Compliance</span>
+        <h2 id="compliance-title">合规与用户须知</h2>
+        <p>使用前请确认所在地法律法规与自身风险承受能力，以下事项需逐项了解。</p>
+      </div>
+      <div class="compliance reveal">
+        <h2>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h9l4 4v13H6z"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
+          用户须知
+        </h2>
+        <ul>
+          <li>注册与使用需完成平台要求的身份核验流程，提交信息应真实有效。</li>
+          <li>各地区对数字资产相关业务的监管要求不同，请自行确认所在地法律法规并合规使用。</li>
+          <li>费率、充提网络与产品规则均以客户端内公示为准，规则调整通过官方渠道通知。</li>
+          <li>请通过官方客户端内的受理渠道处理问题，勿轻信站外私信、第三方群组的处理结论。</li>
+          <li>本页面为信息展示页，所载机制说明与示意内容不构成投资建议、要约邀请或任何收益承诺。</li>
+          <li>合约等杠杆产品风险显著更高，参与前请确认已理解保证金、强平与资金费率的结算方式。</li>
+        </ul>
+
+        <div class="statement">
+          <b>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 8v.01"/><path d="M12 11.4v4.6"/></svg>
+            主体与商标声明
+          </b>
+          <p>OK钱包仅为本站所描述产品的名称，与 OKX、欧易及其关联主体之间不存在隶属、代理或官方合作关系，页面内容仅用于说明该产品自身的功能结构、产品机制与操作流程。页面中所述的“安全合规”为产品设计目标的描述，具体牌照与合规资质以平台官方公示为准，本页面不列示任何牌照编号，亦不以此替代官方披露文件。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section aria-labelledby="start-title">
+      <div class="sec-head reveal">
+        <span class="tag">Getting started</span>
+        <h2 id="start-title">新手四步上手</h2>
+        <p>从确认官方入口到熟悉充提流程，每一步都以安全确认为前提。</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num">1</span>
+          <h3>确认官方入口</h3>
+          <p>核对访问的是 OK钱包 官方页面，将入口加入收藏夹固定使用。</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">2</span>
+          <h3>下载官方客户端</h3>
+          <p>按官方指引选择安卓或 iOS 通道，核对安装包信息后再安装。</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">3</span>
+          <h3>备份与安全设置</h3>
+          <p>完成注册与身份核验，离线备份助记词，开启两步验证与设备锁。</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">4</span>
+          <h3>小额熟悉流程</h3>
+          <p>先查看费率与网络要求，再用小额熟悉充值、下单与提现流程。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="sec-head reveal">
+        <span class="tag">FAQ</span>
+        <h2 id="faq-title">常见问题</h2>
+        <p>关于产品定位、资产归集、助记词保管、产品风险、数据口径、下载核验、安全防护与主体关系的常见疑问，逐条整理如下。</p>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>OK钱包是什么，主要提供哪些服务？</summary>
+          <p>OK钱包是本站所描述产品的名称，提供加密货币交易与资产管理服务，包含多链资产归集、冷热钱包分离的托管结构，以及现货、合约、理财三大产品线。具体功能范围与规则以客户端内公示为准。</p>
+        </details>
+        <details class="reveal">
+          <summary>多链资产归集是怎么实现的？</summary>
+          <p>按支持的链分别生成地址并独立记账，归集时先核对链类型与到账状态，再把分散地址上的余额汇总至统一账户。跨链资产需要先确认目标链的通道是否开启，不同链的地址不可混用。</p>
+        </details>
+        <details class="reveal">
+          <summary>助记词和私钥需要用户自己保管吗？</summary>
+          <p>采用自助保管方式的账户，助记词与私钥由用户本人持有，平台不代为保存，也无法协助找回。请离线抄写、分开存放，不要截图、不要上传云端，也不要向任何人透露；一旦泄露，资产可能被立即转走。</p>
+        </details>
+        <details class="reveal">
+          <summary>现货、合约、理财三类产品的风险差异是什么？</summary>
+          <p>现货按实际成交价格买入或卖出，风险主要来自价格波动；合约使用保证金与杠杆，价格反向波动时可能触发强制平仓，杠杆交易可能导致本金全部损失；理财类产品按规则计息或参与策略，同样存在本金损失可能。三者机制不同，不能以其中一类的表现推断另一类。</p>
+        </details>
+        <details class="reveal">
+          <summary>页面上的行情与资产数字是实时数据吗？</summary>
+          <p>不是。页面中的资产环、行情折线与全部数值均为示意数据，仅用于展示界面结构与交互形态，不代表真实行情、持仓、成交量或收益，也不构成任何交易依据。</p>
+        </details>
+        <details class="reveal">
+          <summary>OK钱包最新版客户端从哪里下载，如何核验正版？</summary>
+          <p>请从官方页面公布的下载入口获取安卓与 iOS 客户端，安装前核对应用名称、图标、开发者信息与版本说明是否与官方展示一致，拒绝聊天群转发的安装包与所谓内部版本。安装后先开启两步验证与设备锁，再操作资产。</p>
+        </details>
+        <details class="reveal">
+          <summary>平台如何防范钓鱼与异常交易？</summary>
+          <p>通过多重签名、加密传输、风控评分与异常交易拦截等手段降低风险：新增提现地址进入观察期，异常登录触发二次验证或临时限制，风险操作进入人工复核。用户侧应固定使用官方入口，不点击来源不明的链接，不向任何人提供验证码。</p>
+        </details>
+        <details class="reveal">
+          <summary>OK钱包与 OKX、欧易是什么关系？是否持牌？</summary>
+          <p>OK钱包仅为本站所描述产品的名称，与 OKX、欧易及其关联主体之间不存在隶属、代理或官方合作关系。页面所述的“安全合规”是产品设计目标的描述，具体牌照与合规资质以平台官方公示为准，本页面不列示任何牌照编号。</p>
+        </details>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section aria-labelledby="risk-title">
+      <div class="risk-block reveal">
+        <h2 id="risk-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17v.01"/></svg>
+          风险提示
+        </h2>
+        <ul>
+          <li>数字资产交易存在较高风险，请谨慎决策。价格波动可能导致本金损失，请勿投入无法承受损失的资金。</li>
+          <li>合约交易使用保证金与杠杆，价格反向波动可能触发强制平仓，杠杆交易可能造成本金全部损失。</li>
+          <li>现货、合约、理财三类产品机制与风险结构不同，任何一类的表现都不能用于推断其他类别。</li>
+          <li>本页内容仅为产品机制、功能结构与操作流程的说明，不构成投资建议、收益承诺或要约邀请。</li>
+          <li>页面中的资产环、行情折线、K 线柱与一切数值均为示意数据，不代表真实行情、持仓、成交量或收益。</li>
+          <li>采用自助保管方式的账户，助记词与私钥一旦遗失或泄露，资产可能无法恢复，平台无法代为找回。</li>
+          <li>页面所述“安全合规”为产品设计目标的描述，牌照与合规资质以平台官方公示为准，本页不列示任何牌照编号。</li>
+          <li>OK钱包仅为本站所描述产品的名称，与 OKX、欧易及其关联主体无隶属、代理或合作关系。</li>
+          <li>请仅从官方页面获取客户端，警惕仿冒站点、第三方转发包与索要助记词、私钥、验证码的行为。</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="返回页面顶部">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.4" y="6.4" width="17.2" height="12.4" rx="3"/>
+              <path d="M16.6 12.6h1.6"/>
+            </svg>
+          </span>
+          <span>OK钱包<small>OK WALLET</small></span>
+        </a>
+        <p>OK钱包致力于为全球用户提供安全、合规的加密货币交易与资产管理服务，涵盖现货、合约、理财等多样化产品，帮助投资者高效掌握市场行情。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <a href="#overview">平台概览</a>
+        <a href="#wallet">钱包能力</a>
+        <a href="#products">产品线</a>
+        <a href="#market">行情面板</a>
+      </div>
+      <div class="foot-col">
+        <h4>说明与须知</h4>
+        <a href="#download">官方下载</a>
+        <a href="#security">安全防护</a>
+        <a href="#compliance">合规须知</a>
+        <a href="#faq">常见问题</a>
+      </div>
+    </div>
+
+    <div class="foot-risk">
+      <strong>风险声明：</strong>数字资产交易存在较高风险，请谨慎决策。本页面所载信息仅供产品机制、功能结构与操作流程说明之用，不构成投资建议或任何形式的收益保证。数字资产价格波动剧烈，可能导致本金损失；合约交易使用保证金与杠杆，可能造成本金全部损失。页面中的资产环、行情折线、K 线柱及一切数值均为示意数据，不代表真实行情、持仓或业务数据。页面所述“安全合规”为产品设计目标的描述，牌照与合规资质以平台官方公示为准，本页不列示任何牌照编号。OK钱包仅为本站所描述产品的名称，与 OKX、欧易及其关联主体之间不存在隶属、代理或官方合作关系。请仅从官方渠道获取正版客户端，勿向任何人透露助记词、私钥与验证码。请在充分理解产品规则并确认所在地法律法规的前提下自主操作。
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 OK钱包 · 本页面为信息展示页</span>
+      <span>下载按钮为页面内占位入口，示意内容不代表真实数据</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    for (var i = 0; i < items.length; i++) items[i].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  for (var j = 0; j < items.length; j++) io.observe(items[j]);
+})();
+</script>
+
+</body>
+</html>
